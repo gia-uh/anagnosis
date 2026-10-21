@@ -1,0 +1,11 @@
+name: es-storyweaver
+source: https://storyweaver.org.in (Spanish books; built by build_storyweaver.py)
+license: CC-BY-4.0
+citation: StoryWeaver, Pratham Books. Each story's attribution is in its `attribution` field.
+lang: es
+label:
+  type: ordinal
+  # StoryWeaver's reading levels, assigned by the publisher: 1 beginning to read,
+  # 2 learning to read, 3 reading independently, 4 reading proficiently; level 5 was added
+  # later and is not described on the site. No ages.
+  levels: [level1, level2, level3, level4, level5]
