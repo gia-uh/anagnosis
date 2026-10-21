@@ -16,12 +16,16 @@ This is a research project in its first week. There is no package yet. `experime
 
 ## Dimensions
 
-| Dimension | Measures | Sources |
+Four dimensions, kept orthogonal, and an age range derived from them. The design is in `docs/superpowers/specs/2026-10-21-anagnosis-design.html`.
+
+| Dimension | Reads as | Built from |
 |---|---|---|
-| Surface | words per sentence, syllables per word, classic formulas | Crawford (1984), Fernández Huerta (1959), Szigriszt-Pazos (1993) with the INFLESZ scale (Barrio-Cantalejo et al., 2008), Flesch-Kincaid |
-| Vocabulary | the age at which the content words of a text are learned | age-of-acquisition norms: Alonso, Fernández and Díez (2015) for 7,039 Spanish words; Kuperman, Stadthagen-Gonzalez and Brysbaert (2012) for 30,000 English words |
-| Syntax | subordinate clauses per sentence, mean dependency distance, parse-tree depth | dependency parses from spaCy |
-| Semantics | not started | |
+| Lexical difficulty | age by which a reader knows the words | age-of-acquisition norms (Alonso, Fernández and Díez, 2015, for Spanish; Kuperman, Stadthagen-Gonzalez and Brysbaert, 2012, for English), frequency, concreteness |
+| Syntactic difficulty | age by which a reader parses the sentences | clauses per sentence, dependency distance, tree depth, sentence length; classic formulas as baselines (Crawford, Fernández Huerta, Szigriszt-Pazos with INFLESZ, Flesch-Kincaid) |
+| Specificity | share of the text that needs domain vocabulary | terms and entities extracted with GLiNER |
+| Background knowledge | concepts per 100 words assumed and not explained | GLiNER candidates, decided by Laya or an LLM judge |
+
+The age range is the 10th to 90th percentile of per-sentence ages. Only the first two dimensions exist so far, as features in the baseline experiment, and nothing is calibrated yet.
 
 ## References
 
@@ -36,4 +40,4 @@ This is a research project in its first week. There is no package yet. `experime
 
 ## License
 
-MIT. The age-of-acquisition norms are not redistributed here. `experiments/2026-10-21-baseline/fetch_norms.py` downloads them from the publisher.
+Code under MIT. Corpora under CC BY 4.0; a corpus enters the repo only if its own license is CC BY or public domain. The age-of-acquisition norms are not redistributed here. `experiments/2026-10-21-baseline/fetch_norms.py` downloads them from the publisher.
