@@ -32,7 +32,7 @@ Weights per standard deviation. Lexical: aoa_p90 0.48, long_word_share 0.17, syl
 
 ## What it showed
 
-1. **StoryWeaver's levels are mostly about length.** The number of words in a story ranks the levels better (0.50) than any measure of difficulty, because the publisher's level descriptions are word-count bands. The lexical dimension still beats the classic formulas on it (0.34 against 0.30), but the corpus is a weak label for reading difficulty, and 93% of it is translated.
+1. **StoryWeaver's levels are mostly about length.** The number of words in a story ranks the levels better (0.50) than any measure of difficulty: higher levels are mostly longer stories. The lexical dimension still beats the classic formulas on it (0.34 against 0.30), but the corpus is a weak label for reading difficulty, and 93% of it is translated.
 2. **The Cuban texts point the right way but are too few to conclude.** With 23 texts, a rank correlation of 0.46 has a 95% interval of roughly 0.03 to 0.75. They are also a strange sample: Martí's poems are read from 3rd grade to 8th.
 3. **Age anchoring fails again,** for the same reason as in English: too few texts with ages and too little spread.
 4. **The two dimensions are below the 0.5 the design allows (0.30),** unlike in English (0.55).
