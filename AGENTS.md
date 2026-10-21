@@ -9,6 +9,7 @@ This file changes when the goals change. Nothing in it should be made false by a
 - **Every metric carries its source and its measurement.** A metric enters with the paper it comes from, or the experiment that justified it, and its values on the reference corpora.
 - **Age claims are calibrated or labelled.** A number reported as a reading age is either fitted on texts of known age or marked as the formula's own mapping, with its valid range.
 - **Third-party norms are downloaded, never committed.** Their licenses do not allow redistribution.
+- **The repo is in English.** Code, comments, docs, commits and reports are English. Spanish appears only as corpus text and as the per-language data that processes it (vowel rules, subordinator lists, corpus headings), and Spanish reference titles carry an English translation in brackets.
 - **Language is declared, never guessed.** Syllables, norms and parsers are per language.
 
 ## Layout
