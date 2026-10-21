@@ -12,7 +12,19 @@ A book declares its target band, for example "readable alone between 8 and 10 ye
 
 ## Status
 
-This is a research project in its first week. There is no package yet. `experiments/2026-10-21-baseline/` holds the first prototype and its measurements on eight books.
+A research project in its first weeks. The package measures surface, vocabulary and syntax features; nothing is calibrated yet. `experiments/2026-10-21-baseline/` holds the first prototype and its measurements on eight books.
+
+## Use
+
+```bash
+uv tool install git+https://github.com/gia-uh/anagnosis   # or: uv sync in a clone
+anagnosis fetch-norms                                     # once: age-of-acquisition norms into ~/.cache/anagnosis
+anagnosis measure chapters/*.md --lang es                 # one row per file, then median and quartiles
+anagnosis measure ch01.md --lang es --level sentence --format jsonl
+anagnosis measure chapters/*.md --lang es --exclude-heading 'Para padres' --summary
+```
+
+Each row carries the unit's character offsets into the source file. Markdown markup is masked, not deleted, so the offsets point at the original text. `--exclude-heading` drops the section under a matching heading. `anagnosis features` lists every feature with its family, languages, levels, source key in `research/references.bib` and definition.
 
 ## Dimensions
 

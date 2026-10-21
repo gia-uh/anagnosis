@@ -1,6 +1,6 @@
 # Baseline: three dimensions on eight books
 
-First prototype. It measures each chapter on surface, vocabulary and syntax, and reports the median per book.
+First prototype. The `anagnosis` package supersedes these scripts; see "Reproduced with the package" below. It measures each chapter on surface, vocabulary and syntax, and reports the median per book.
 
 ## Run
 
@@ -63,3 +63,26 @@ Within the myths anthology the 23 chapters are close: Crawford 3.4 to 4.5 (σ 0.
 - English syllables come from CMUdict with a heuristic fallback (9 of 10 test words right); Spanish syllables from vowel-nucleus rules (24 of 24).
 - One number per chapter. The worst passages, which a model would rewrite, need per-sentence and per-paragraph scores.
 - No reference corpus with known reading ages, so nothing is calibrated yet: the age mapping is each formula's own.
+
+## Reproduced with the package
+
+`anagnosis measure --level document --summary`, excluding sections headed "Para padres" or "For parents", on the same files. Medians per chapter.
+
+| Corpus | n | wps | fh / fkgl | craw | cl/s | mdd | depth | aoa90 | late% | cov% |
+|---|---|---|---|---|---|---|---|---|---|---|
+| es, myths for children | 23 | 11.3 | 86.6 | 3.7 | 0.61 | 2.27 | 3.17 | 6.3 | 0.4 | 86 |
+| es, abridged classics | 17 | 15.7 | 72.9 | 4.9 | 1.02 | 2.37 | 4.04 | 7.9 | 3.2 | 76 |
+| es, the originals | 6 | 17.7 | 72.2 | 5.0 | 1.42 | 2.69 | 4.03 | 7.7 | 2.7 | 77 |
+| es, adult nonfiction | 19 | 21.6 | 56.0 | 6.2 | 1.53 | 2.54 | 4.91 | 8.9 | 9.8 | 67 |
+| en, philosophy for programmers | 21 | 12.1 | 11.0 | | 0.36 | 2.26 | 4.00 | 12.1 | 30.2 | 89 |
+| en, science of computation | 30 | 18.1 | 10.6 | | 1.31 | 2.37 | 4.95 | 11.0 | 25.2 | 94 |
+| en, AI for managers | 19 | 19.3 | 11.2 | | 1.32 | 2.38 | 5.41 | 11.1 | 26.8 | 93 |
+| en, chatbots | 18 | 14.0 | 9.2 | | 0.66 | 2.28 | 3.96 | 11.1 | 34.6 | 92 |
+
+Where it differs from the prototype, and why:
+
+- **Mean dependency distance is lower everywhere** (about 0.1 to 0.3): positions now skip punctuation, as Liu (2008) defines it.
+- **The originals** are measured whole; the prototype cut each novel at 40,000 words. Clauses per sentence fall from 1.62 to 1.42.
+- **Nonfiction sentences are longer** (AI for managers 16.6 → 19.3): spaCy keeps sentences joined by semicolons and colons that the prototype's punctuation splitter cut, and short files the prototype skipped (under 300 words) now count. The longest sentences were read and are real prose.
+- **The philosophy book's anomalies disappear** (mdd 5.51 → 2.26): its chapters are still outlines and reading lists, and the prototype measured bibliography lines and URLs as prose. The book should not be used as a corpus until its chapters are written.
+- **Three segmentation bugs found on the way** and fixed in the package with tests: multi-line front matter measured as prose, bare URLs measured as prose, list items joined into one sentence.
