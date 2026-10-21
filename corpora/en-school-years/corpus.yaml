@@ -1,0 +1,10 @@
+name: en-school-years
+source: https://www.gutenberg.org (books listed in build_en_readers.py)
+license: public-domain
+citation: US school readers whose title states the school year or grade, 1900-1925, from Project Gutenberg.
+lang: en
+label:
+  type: ordinal
+  # The school year stated in the book's title; age is year + 5.5, the middle of a US school year.
+  levels: [year1, year3, year4, year5]
+  ages: [6.5, 8.5, 9.5, 10.5]

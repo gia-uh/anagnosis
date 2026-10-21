@@ -256,10 +256,10 @@ Feature("aoa_p90", family="vocabulary", source="alonso2015;kuperman2012",
 <table class="tbl">
 <thead><tr><th>Corpus</th><th>Lang</th><th>Labels</th><th>License</th><th>Use</th></tr></thead>
 <tbody>
-<tr><td>HablaCultura</td><td>es</td><td class="why">readings labelled by instructors, CEFR</td><td class="warn">CC BY 4.0 on the card; source terms unchecked</td><td class="why">ordinal, second-language reading</td></tr>
-<tr><td>Kwiziq</td><td>es</td><td class="why">articles by CEFR level</td><td class="warn">CC BY 4.0 on the card; source terms unchecked</td><td class="why">ordinal, second-language reading</td></tr>
-<tr><td>CAES</td><td>es</td><td class="why">learner essays by CEFR level</td><td class="ok">CC BY 4.0</td><td class="why">learner writing, not reading: a contrast set, not an age anchor</td></tr>
-<tr><td>UniversalCEFR, CC BY subset</td><td>es, en</td><td class="why">CEFR</td><td class="warn">per item; only items marked CC BY</td><td class="why">ordinal, the largest pool once filtered</td></tr>
+<tr><td>HablaCultura</td><td>es</td><td class="why">readings labelled by instructors, CEFR</td><td class="warn">CC BY 4.0 on the uploader's card, CC BY-NC 4.0 on UniversalCEFR's; the site allows free copying with attribution but forbids commercial use, so not CC BY</td><td class="why">ordinal, second-language reading</td></tr>
+<tr><td>Kwiziq</td><td>es</td><td class="why">articles by CEFR level</td><td class="warn">CC BY 4.0 on the uploader's card, CC BY-NC 4.0 on UniversalCEFR's; a commercial site with no open license found</td><td class="why">ordinal, second-language reading</td></tr>
+<tr><td>CAES</td><td>es</td><td class="why">learner essays by CEFR level</td><td class="warn">CC BY 4.0 on the uploader's card, CC BY-NC 4.0 on UniversalCEFR's; the source site grants no license (&copy; CAES)</td><td class="why">learner writing, not reading: a contrast set, not an age anchor</td></tr>
+<tr><td>UniversalCEFR, CC BY subset</td><td>es, en</td><td class="why">CEFR</td><td class="warn">one license per source set; checked 2026-10-21, no Spanish or English set is CC BY (only Estonian ELLE is)</td><td class="why">ordinal, the largest pool once filtered</td></tr>
 <tr><td>Public-domain books</td><td>es, en</td><td class="why">age band from the catalogue or the original publisher</td><td class="ok">public domain</td><td class="why">Project Gutenberg and Wikisource, with the label's provenance recorded</td></tr>
 </tbody>
 </table>
@@ -354,8 +354,8 @@ Feature("aoa_p90", family="vocabulary", source="alonso2015;kuperman2012",
 <h3>Open questions</h3>
 <ul>
 <li>The annotation protocol for the linguists: which age bands, how many comparisons per passage, and which texts go first.</li>
-<li>Whether non-CC-BY corpora may be fetched by a script for evaluation only, never committed, the way the norms are. Excluded above until decided.</li>
-<li>Which LLM the experiments use for the judge, since the repo fixes none.</li>
+<li>Decided: non-CC-BY corpora are not used at all, not even fetched for evaluation, so that no result depends on non-commercial data.</li>
+<li>Decided: the experiments use a small OpenRouter model with reasoning off as the judge; the repo still fixes none, and each run records the model id.</li>
 <li>How scenes are segmented when a text does not mark them: scene breaks in the markup where they exist, and otherwise shifts of place, time and cast.</li>
 <li>Where the first paper is aimed: the joint calibration across heterogeneous labels, the Spanish child-reading corpus, or the offender-and-rewrite loop.</li>
 </ul>

@@ -1,0 +1,98 @@
+{
+  "n": {
+    "en-school-readers": 642,
+    "en-school-years": 258
+  },
+  "books": {
+    "en-school-readers": 17,
+    "en-school-years": 7
+  },
+  "lexical": {
+    "weights_per_sd": {
+      "aoa_mean": 0.46187452196471085,
+      "aoa_p90": 0.8209759523337932,
+      "aoa_late_share": 0.0,
+      "rare_word_share": 0.0,
+      "letters_per_word": 0.0,
+      "syllables_per_word": 0.20460746157147164,
+      "long_word_share": 0.29691435831948426
+    },
+    "age_map": {
+      "slope": 0.3695633144014048,
+      "intercept": 9.41125813114365,
+      "valid": [
+        6.5,
+        10.5
+      ]
+    },
+    "held_out": {
+      "en-school-readers": {
+        "spearman": 0.6612774189328049,
+        "within_one": 0.7834890965732088
+      },
+      "en-school-years": {
+        "spearman": 0.555523299956753,
+        "within_one": 0.9108527131782945,
+        "age_mae": 0.8391376968692763,
+        "age_mae_constant": 0.5193798449612403
+      }
+    },
+    "leave_one_corpus_out": {
+      "en-school-readers": 0.6514183554045782,
+      "en-school-years": 0.5316242771408007
+    }
+  },
+  "syntactic": {
+    "weights_per_sd": {
+      "words_per_sentence": 0.0,
+      "clauses_per_sentence": 0.0,
+      "mean_dependency_distance": 0.44078496906944886,
+      "mean_tree_depth": 0.5816655920336906
+    },
+    "age_map": {
+      "slope": 0.44254723668754,
+      "intercept": 9.376529018974832,
+      "valid": [
+        6.5,
+        10.5
+      ]
+    },
+    "held_out": {
+      "en-school-readers": {
+        "spearman": 0.4379394642925631,
+        "within_one": 0.6728971962616822
+      },
+      "en-school-years": {
+        "spearman": 0.41499047805483297,
+        "within_one": 0.875968992248062,
+        "age_mae": 1.0542419889799264,
+        "age_mae_constant": 0.5193798449612403
+      }
+    },
+    "leave_one_corpus_out": {
+      "en-school-readers": 0.4657686506744738,
+      "en-school-years": 0.45138592185352444
+    }
+  },
+  "majority_within_one": {
+    "en-school-readers": 0.6230529595015576,
+    "en-school-years": 0.9302325581395349
+  },
+  "formulas": {
+    "flesch_kincaid_grade": {
+      "en-school-readers": 0.5253404584105741,
+      "en-school-years": 0.4865426697941432
+    },
+    "flesch_reading_ease": {
+      "en-school-readers": -0.5639082970400284,
+      "en-school-years": -0.5073300628587577
+    }
+  },
+  "correlation": {
+    "lexical~syntactic": 0.5466606788659641,
+    "lexical~flesch_kincaid_grade": 0.665915283190189,
+    "syntactic~flesch_kincaid_grade": 0.9281269267272386,
+    "lexical~flesch_reading_ease": -0.7942134446960983,
+    "syntactic~flesch_reading_ease": -0.8293376180902337
+  }
+}

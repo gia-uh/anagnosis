@@ -1,0 +1,10 @@
+name: en-school-readers
+source: https://www.gutenberg.org (books listed in build_en_readers.py)
+license: public-domain
+citation: US, Canadian and British school readers, 1857-1925, from Project Gutenberg.
+lang: en
+label:
+  type: ordinal
+  # The reader's number within its series. It orders difficulty inside a series
+  # but is not a grade, so the corpus carries no ages.
+  levels: [first, second, third, fourth, fifth, sixth, seventh]

@@ -1,0 +1,11 @@
+name: es-cuba-grades
+source: Spanish Wikisource, for the readings listed in readings.jsonl (built by build_es_cuba_grades.py)
+license: public-domain
+citation: Public-domain texts read in Cuban schools, from the 2010-2025 MINED Lengua Española and Español-Literatura textbooks; texts from es.wikisource.org.
+lang: es
+label:
+  type: ordinal
+  # The earliest grade whose textbook includes the text. Cuban grade 1 starts at age 6,
+  # so age is grade + 5.5. The grade says where a text is read, not how hard it is.
+  levels: [grade3, grade4, grade5, grade6, grade7, grade8]
+  ages: [8.5, 9.5, 10.5, 11.5, 12.5, 13.5]
