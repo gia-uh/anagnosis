@@ -10,11 +10,18 @@ from pathlib import Path
 
 import numpy as np
 
-from anagnosis.calibrate import DIMENSIONS, fit, spearman, within_one
+from anagnosis.calibrate import fit, spearman, within_one
 from anagnosis.corpora import load
 from anagnosis.doc import segment
 from anagnosis.extractors import ALL
 from anagnosis.features import table
+
+# The dimensions as they were when this experiment ran; anagnosis.calibrate.DIMENSIONS has moved on since.
+DIMENSIONS = {
+    "lexical": ["aoa_mean", "aoa_p90", "aoa_late_share", "rare_word_share",
+                "letters_per_word", "syllables_per_word", "long_word_share"],
+    "syntactic": ["words_per_sentence", "clauses_per_sentence", "mean_dependency_distance", "mean_tree_depth"],
+}
 
 HERE = Path(__file__).parent
 ROOT = HERE.parent.parent

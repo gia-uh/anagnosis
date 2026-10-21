@@ -1,0 +1,62 @@
+{
+  "baseline": {
+    "correlation": 0.2909005715921603,
+    "correlation_within_level": 0.18816256681329593,
+    "lexical": {
+      "es-storyweaver": 0.3419494658978986,
+      "es-cuba-grades": 0.46030938902423446
+    },
+    "syntactic": {
+      "es-storyweaver": 0.27165789521123745,
+      "es-cuba-grades": 0.35139689965689336
+    }
+  },
+  "lexical without word length": {
+    "correlation": 0.3427298545674177,
+    "correlation_within_level": 0.23666998769932948,
+    "lexical": {
+      "es-storyweaver": 0.3365011779632899,
+      "es-cuba-grades": 0.3996882864518465
+    },
+    "syntactic": {
+      "es-storyweaver": 0.27165789521123745,
+      "es-cuba-grades": 0.35139689965689336
+    }
+  },
+  "syntactic without sentence length": {
+    "correlation": 0.2726658852192784,
+    "correlation_within_level": 0.16927771929923652,
+    "lexical": {
+      "es-storyweaver": 0.3419494658978986,
+      "es-cuba-grades": 0.46030938902423446
+    },
+    "syntactic": {
+      "es-storyweaver": 0.27793725678426684,
+      "es-cuba-grades": 0.35550680491603825
+    }
+  },
+  "both dropped": {
+    "correlation": 0.32346897038759503,
+    "correlation_within_level": 0.21592038135235392,
+    "lexical": {
+      "es-storyweaver": 0.3365011779632899,
+      "es-cuba-grades": 0.3996882864518465
+    },
+    "syntactic": {
+      "es-storyweaver": 0.27793725678426684,
+      "es-cuba-grades": 0.35550680491603825
+    }
+  },
+  "syntactic residualized on lexical": {
+    "correlation": -0.003094965291883227,
+    "correlation_within_level": -0.10314481480203437,
+    "lexical": {
+      "es-storyweaver": 0.3419494658978986,
+      "es-cuba-grades": 0.46030938902423446
+    },
+    "syntactic": {
+      "es-storyweaver": 0.15942230325684476,
+      "es-cuba-grades": 0.23220964714168973
+    }
+  }
+}
