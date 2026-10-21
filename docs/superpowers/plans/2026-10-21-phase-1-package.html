@@ -68,7 +68,7 @@ pre{font-family:var(--font-mono);font-size:12px;background:var(--chrome);border:
 
 <h2>Tasks</h2>
 
-<details class="task" id="task-1" data-state="pending" open>
+<details class="task" id="task-1" data-state="done" open>
 <summary><span>1 · Skeleton, Makefile, CI</span><span class="files">pyproject.toml, Makefile, .github/workflows/tests.yml, src/anagnosis/__init__.py</span><span class="st"></span></summary>
 <ol><li>Hatchling package <code>anagnosis</code>, Python 3.11+, MIT, script <code>anagnosis = anagnosis.cli:main</code>.</li>
 <li>Dependencies: spaCy 3.8, the <code>es_core_news_sm</code> and <code>en_core_web_sm</code> 3.8.0 wheels by direct URL, <code>wordfreq</code>, <code>cmudict</code>. Dev group: pytest.</li>
@@ -76,7 +76,7 @@ pre{font-family:var(--font-mono);font-size:12px;background:var(--chrome);border:
 <div class="verify"><b>verify</b><pre>make test   # collects and passes (zero tests is a failure: add a smoke test)</pre></div>
 </details>
 
-<details class="task" id="task-2" data-state="pending" open>
+<details class="task" id="task-2" data-state="done" open>
 <summary><span>2 · Segmenter</span><span class="files">src/anagnosis/doc.py, tests/test_doc.py</span><span class="st"></span></summary>
 <ol><li><code>mask(text, fmt)</code> for Markdown: front matter, fenced code, headings, image lines, HTML tags, link targets, emphasis marks, footnote markers, scriptorium markers <code>{~…}</code> and <code>[&gt;…]</code>, all replaced by spaces of the same length.</li>
 <li><code>exclude=</code> a list of heading patterns; a matching heading masks its section up to the next heading of the same or higher level.</li>
@@ -84,7 +84,7 @@ pre{font-family:var(--font-mono);font-size:12px;background:var(--chrome);border:
 <div class="verify"><b>verify</b><pre>uv run pytest tests/test_doc.py -q   # every sentence's source[start:end] equals its text; masked markup never appears in a sentence; excluded section has no sentences</pre></div>
 </details>
 
-<details class="task" id="task-3" data-state="pending" open>
+<details class="task" id="task-3" data-state="done" open>
 <summary><span>3 · Language resources and norms</span><span class="files">src/anagnosis/lang/es.py, lang/en.py, src/anagnosis/norms.py, tests/test_lang.py, tests/test_norms.py</span><span class="st"></span></summary>
 <ol><li>Spanish syllables from vowel nuclei: strong vowels and accented weak vowels break, silent <em>u</em> after q/g before e/i, final <em>y</em> as a vowel.</li>
 <li>English syllables from CMUdict, with a vowel-group fallback.</li>
@@ -92,14 +92,14 @@ pre{font-family:var(--font-mono);font-size:12px;background:var(--chrome);border:
 <div class="verify"><b>verify</b><pre>uv run pytest tests/test_lang.py tests/test_norms.py -q   # word lists with known syllable counts; xlsx parser on a tiny hand-built file</pre></div>
 </details>
 
-<details class="task" id="task-4" data-state="pending" open>
+<details class="task" id="task-4" data-state="done" open>
 <summary><span>4 · Feature registry and pooling</span><span class="files">src/anagnosis/features.py, tests/test_features.py</span><span class="st"></span></summary>
 <ol><li><code>Feature(name, family, languages, source, doc, compute)</code> where <code>compute(pool)</code> takes pooled counts and bags.</li>
 <li><code>pool(units)</code> sums counts and concatenates bags in order. <code>table(doc, extractors)</code> yields rows for sentences, paragraphs and the document.</li></ol>
 <div class="verify"><b>verify</b><pre>uv run pytest tests/test_features.py -q   # pooled ratio differs from mean of ratios on a fixture built to make them differ</pre></div>
 </details>
 
-<details class="task" id="task-5" data-state="pending" open>
+<details class="task" id="task-5" data-state="done" open>
 <summary><span>5 · Extractors</span><span class="files">src/anagnosis/extractors/surface.py, vocabulary.py, syntax.py, tests/test_extractors_*.py</span><span class="st"></span></summary>
 <ol><li>Surface: words per sentence, syllables per word, letters per word, long-word share, Fernández Huerta, Szigriszt-Pazos, Crawford (es), Flesch reading ease and Flesch-Kincaid (en).</li>
 <li>Vocabulary: AoA mean, p90 and share at 9 or later over content lemmas, coverage, Zipf share below 4 with proper nouns excluded, MTLD (document level).</li>
@@ -108,14 +108,14 @@ pre{font-family:var(--font-mono);font-size:12px;background:var(--chrome);border:
 <div class="verify"><b>verify</b><pre>uv run pytest -q   # then break one coefficient per extractor and see its test fail</pre></div>
 </details>
 
-<details class="task" id="task-6" data-state="pending" open>
+<details class="task" id="task-6" data-state="done" open>
 <summary><span>6 · CLI</span><span class="files">src/anagnosis/cli.py, tests/test_cli.py</span><span class="st"></span></summary>
 <ol><li><code>anagnosis fetch-norms</code>.</li>
 <li><code>anagnosis measure FILES --lang es|en [--level sentence|paragraph|document] [--exclude-heading RE] [--format jsonl|csv|table]</code>; with several files and <code>--level document</code> it also prints the median and interquartile range per feature.</li></ol>
 <div class="verify"><b>verify</b><pre>uv run anagnosis measure tests/fixtures/easy-es.md --lang es --level sentence --format jsonl | head -2   # rows carry file, unit, start, end, features</pre></div>
 </details>
 
-<details class="task" id="task-7" data-state="pending" open>
+<details class="task" id="task-7" data-state="done" open>
 <summary><span>7 · Reproduce the baseline, open the PR</span><span class="files">experiments/2026-10-21-baseline/README.md, docs</span><span class="st"></span></summary>
 <ol><li>Run <code>anagnosis measure --level document</code> on the eight books and compare the medians with the baseline table; differences are explained (sentence splitting by spaCy, pooled ratios) or fixed.</li>
 <li>README usage section; the baseline experiment notes that the package supersedes its scripts.</li>
@@ -124,7 +124,12 @@ pre{font-family:var(--font-mono);font-size:12px;background:var(--chrome);border:
 </details>
 
 <h2>Where this plan departs from the spec</h2>
-<p>Nothing yet. Departures forced by the code are listed here with the file and line that forced them.</p>
+<ul>
+<li>An <code>anagnosis features</code> command was added to list the registry (<code>src/anagnosis/cli.py</code>), instead of a Python one-liner in the README.</li>
+<li>A lowercase token tagged PROPN counts as a common word (<code>src/anagnosis/extractors/vocabulary.py</code>, <code>_proper</code>): the small Spanish model tags "perro" and "come" as proper nouns in "El perro come pan."</li>
+<li>Blocks are also cut at every list-item start (<code>src/anagnosis/doc.py</code>, <code>_blocks</code>), found when reproducing the baseline on nonfiction.</li>
+<li>The English test word "theory" was replaced: CMUdict's first pronunciation has two syllables.</li>
+</ul>
 </main>
 <script>
 (function(){
