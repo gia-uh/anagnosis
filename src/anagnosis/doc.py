@@ -102,13 +102,28 @@ class Doc:
 
 
 _BLOCK = re.compile(r"\S(?:.*?\S)?(?=\n[ \t]*\n|\s*\Z)", re.S)
+_ITEM = re.compile(r"(?m)^[ \t]*(?:[-*+]|\d+[.)])[ \t]+")
+
+
+def _blocks(source: str, masked: str) -> list[tuple[int, int]]:
+    """Paragraphs are separated by blank lines; a list item always starts a new block."""
+    cuts = sorted({m.end() for m in _ITEM.finditer(source)})
+    out = []
+    for m in _BLOCK.finditer(masked):
+        edges = [m.start()] + [c for c in cuts if m.start() < c < m.end()] + [m.end()]
+        for a, b in zip(edges, edges[1:]):
+            seg = masked[a:b]
+            if _WORD.search(seg):
+                lead, trail = len(seg) - len(seg.lstrip()), len(seg) - len(seg.rstrip())
+                out.append((a + lead, b - trail))
+    return out
 _WORD = re.compile(r"[^\W\d_]")
 
 
 def segment(source: str, lang: str, exclude: list[str] | None = None) -> Doc:
     """Split source into paragraphs (blank-line separated) and sentences (spaCy)."""
     masked = mask(source, exclude)
-    blocks = [(m.start(), m.end()) for m in _BLOCK.finditer(masked) if _WORD.search(m.group())]
+    blocks = _blocks(source, masked)
     paragraphs = []
     for (start, end), parsed in zip(blocks, nlp(lang).pipe(masked[s:e] for s, e in blocks)):
         para = Paragraph(start, end)

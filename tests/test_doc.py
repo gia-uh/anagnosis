@@ -69,3 +69,11 @@ def test_paragraphs_and_sentences():
 
 def test_text_without_words_yields_no_paragraphs():
     assert segment("---\n\n***\n", "es").paragraphs == []
+
+
+def test_list_items_are_separate_units():
+    src = "Intro text here.\n- first item without period\n- second item\n  wrapped onto two lines\n1. numbered item\n\nNext paragraph."
+    doc = segment(src, "en")
+    texts = [src[s.start:s.end] for s in doc.sentences]
+    assert texts == ["Intro text here.", "first item without period", "second item\n  wrapped onto two lines",
+                     "numbered item", "Next paragraph."]
