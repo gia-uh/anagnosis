@@ -1,0 +1,104 @@
+{
+  "n": {
+    "es-storyweaver": 1383,
+    "es-cuba-grades": 23
+  },
+  "books": {
+    "es-storyweaver": 1373,
+    "es-cuba-grades": 23
+  },
+  "lexical": {
+    "weights_per_sd": {
+      "aoa_mean": 0.07063859999397454,
+      "aoa_p90": 0.47983637665203493,
+      "aoa_late_share": 0.0,
+      "rare_word_share": 0.0,
+      "letters_per_word": 0.0,
+      "syllables_per_word": 0.12530287836050857,
+      "long_word_share": 0.17302036278947405
+    },
+    "age_map": {
+      "slope": 1.6607113739384207,
+      "intercept": 10.639910353824977,
+      "valid": [
+        8.5,
+        13.5
+      ]
+    },
+    "held_out": {
+      "es-storyweaver": {
+        "spearman": 0.3419494658978986,
+        "within_one": 0.8235719450469993
+      },
+      "es-cuba-grades": {
+        "spearman": 0.46030938902423446,
+        "within_one": 0.6086956521739131,
+        "age_mae": 1.336275163317324,
+        "age_mae_constant": 1.3043478260869565
+      }
+    },
+    "leave_one_corpus_out": {
+      "es-storyweaver": 0.3205938683066102,
+      "es-cuba-grades": 0.44695219693201343
+    }
+  },
+  "syntactic": {
+    "weights_per_sd": {
+      "words_per_sentence": 0.0,
+      "clauses_per_sentence": 0.1727060876647787,
+      "mean_dependency_distance": 0.29288909487013254,
+      "mean_tree_depth": 0.10179927843787753
+    },
+    "age_map": {
+      "slope": 0.4855005468457345,
+      "intercept": 10.441548732920829,
+      "valid": [
+        8.5,
+        13.5
+      ]
+    },
+    "held_out": {
+      "es-storyweaver": {
+        "spearman": 0.27165789521123745,
+        "within_one": 0.7982646420824295
+      },
+      "es-cuba-grades": {
+        "spearman": 0.35139689965689336,
+        "within_one": 0.6521739130434783,
+        "age_mae": 1.195921050650738,
+        "age_mae_constant": 1.3043478260869565
+      }
+    },
+    "leave_one_corpus_out": {
+      "es-storyweaver": 0.2915398107007112,
+      "es-cuba-grades": 0.3904409996187703
+    }
+  },
+  "majority_within_one": {
+    "es-storyweaver": 0.6182212581344902,
+    "es-cuba-grades": 0.5217391304347826
+  },
+  "formulas": {
+    "fernandez_huerta": {
+      "es-storyweaver": -0.3035620993869022,
+      "es-cuba-grades": -0.4264026706362886
+    },
+    "szigriszt_pazos": {
+      "es-storyweaver": -0.30270685057491187,
+      "es-cuba-grades": -0.4264026706362886
+    },
+    "crawford": {
+      "es-storyweaver": 0.26115284399611194,
+      "es-cuba-grades": 0.4130454785440676
+    }
+  },
+  "correlation": {
+    "lexical~syntactic": 0.2993600238160804,
+    "lexical~fernandez_huerta": -0.6682092573018363,
+    "syntactic~fernandez_huerta": -0.38191841395165826,
+    "lexical~szigriszt_pazos": -0.668669512605513,
+    "syntactic~szigriszt_pazos": -0.3651189709452903,
+    "lexical~crawford": 0.4043251756934051,
+    "syntactic~crawford": 0.6709257767511091
+  }
+}

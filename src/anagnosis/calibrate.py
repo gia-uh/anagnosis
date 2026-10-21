@@ -112,6 +112,7 @@ def fit(X, corpus, level, n_levels: dict[str, int], signs, pairs=(), ages: dict[
     weights = params["w"] / std
     out = Fit(mean=mean, std=std, weights=weights,
               thresholds={c: _thresholds(params[f"a:{c}"], params[f"b:{c}"]) for c in n_levels})
+    ages = {c: a for c, a in (ages or {}).items() if c in groups and len(groups[c])}
     if ages:
         idx = np.concatenate([groups[c] for c in ages])
         yrs = np.concatenate([np.asarray(ages[c], float)[ys[c]] for c in ages])
