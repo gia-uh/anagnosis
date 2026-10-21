@@ -54,3 +54,12 @@ def test_other_licenses_are_refused(tmp_path, lic):
 def test_label_outside_the_scale_is_an_error(tmp_path):
     with pytest.raises(ValueError, match="grade9"):
         load(write(tmp_path, records=[{"id": "a", "text": "x", "label": "grade9"}]))
+
+
+def test_every_committed_corpus_loads():
+    from pathlib import Path
+    dirs = [d for d in (Path(__file__).parent.parent / "corpora").iterdir() if (d / "corpus.yaml").exists()]
+    assert dirs
+    for d in dirs:
+        c = load(d)
+        assert c.docs and all(doc.text.strip() for doc in c.docs), d.name
