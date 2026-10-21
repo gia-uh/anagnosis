@@ -1,0 +1,252 @@
+{
+  "n": {
+    "en-school-readers": 642,
+    "en-school-years": 258
+  },
+  "books": {
+    "en-school-readers": 17,
+    "en-school-years": 7
+  },
+  "spearman": {
+    "lexical": {
+      "en-school-readers": {
+        "value": 0.6612774189328049,
+        "ci95": [
+          0.39214052974856795,
+          0.8239473051061859
+        ]
+      },
+      "en-school-years": {
+        "value": 0.555523299956753,
+        "ci95": [
+          0.21693638906451254,
+          0.7647670390975082
+        ]
+      }
+    },
+    "syntactic": {
+      "en-school-readers": {
+        "value": 0.37477792453196107,
+        "ci95": [
+          0.02885197522415897,
+          0.6114795661336889
+        ]
+      },
+      "en-school-years": {
+        "value": 0.35511621593031945,
+        "ci95": [
+          -0.10735985667368864,
+          0.7244134881297848
+        ]
+      }
+    },
+    "both dimensions": {
+      "en-school-readers": {
+        "value": 0.6265901825524653,
+        "ci95": [
+          0.30671956968839154,
+          0.8198670968496605
+        ]
+      },
+      "en-school-years": {
+        "value": 0.5820969077865943,
+        "ci95": [
+          0.2538772376741145,
+          0.7741870982892143
+        ]
+      }
+    },
+    "formula inputs, refitted": {
+      "en-school-readers": {
+        "value": 0.5622614660820314,
+        "ci95": [
+          0.2619329297624881,
+          0.7608116112403827
+        ]
+      },
+      "en-school-years": {
+        "value": 0.49284802609832834,
+        "ci95": [
+          0.14602835800903768,
+          0.7164360982031885
+        ]
+      }
+    },
+    "flesch_kincaid_grade": {
+      "en-school-readers": {
+        "value": 0.5253404584105741,
+        "ci95": [
+          0.18518668386763013,
+          0.7493058444433943
+        ]
+      },
+      "en-school-years": {
+        "value": 0.4865426697941432,
+        "ci95": [
+          0.03775572411624932,
+          0.7752417645146278
+        ]
+      }
+    },
+    "flesch_reading_ease": {
+      "en-school-readers": {
+        "value": 0.5639082970400284,
+        "ci95": [
+          0.24843912370097423,
+          0.7646128699001173
+        ]
+      },
+      "en-school-years": {
+        "value": 0.5073300628587577,
+        "ci95": [
+          0.10490741948335772,
+          0.7540579534144227
+        ]
+      }
+    },
+    "text length in words": {
+      "en-school-readers": {
+        "value": 0.35089716572951946,
+        "ci95": [
+          0.15197038404187818,
+          0.5004395874190377
+        ]
+      },
+      "en-school-years": {
+        "value": 0.1434918163284478,
+        "ci95": [
+          -0.11733256860542793,
+          0.3615800663117674
+        ]
+      }
+    }
+  },
+  "lexical_minus_best_formula": {
+    "en-school-readers": {
+      "formula": "flesch_reading_ease",
+      "value": 0.09736912189277647,
+      "ci95": [
+        0.004075873733210187,
+        0.19454660593135542
+      ]
+    },
+    "en-school-years": {
+      "formula": "flesch_reading_ease",
+      "value": 0.04819323709799528,
+      "ci95": [
+        -0.1513259275738722,
+        0.21689864977844753
+      ]
+    }
+  },
+  "within_one": {
+    "en-school-readers": {
+      "lexical": 0.7834890965732088,
+      "syntactic": 0.6588785046728972,
+      "both dimensions": 0.7725856697819314,
+      "formula inputs, refitted": 0.7398753894080997,
+      "most frequent level": 0.6230529595015576
+    },
+    "en-school-years": {
+      "lexical": 0.9108527131782945,
+      "syntactic": 0.8527131782945736,
+      "both dimensions": 0.9108527131782945,
+      "formula inputs, refitted": 0.9069767441860465,
+      "most frequent level": 0.9302325581395349
+    }
+  },
+  "transfer": {
+    "lexical": {
+      "en-school-readers": 0.6514183554045782,
+      "en-school-years": 0.5316242771408007
+    },
+    "syntactic": {
+      "en-school-readers": 0.4065283045038206,
+      "en-school-years": 0.39985254160327494
+    },
+    "both dimensions": {
+      "en-school-readers": 0.6456243560990907,
+      "en-school-years": 0.5545083581263243
+    },
+    "formula inputs, refitted": {
+      "en-school-readers": 0.5697985921822312,
+      "en-school-years": 0.46413587707621995
+    }
+  },
+  "correlation": {
+    "order": [
+      "lexical",
+      "syntactic",
+      "both dimensions",
+      "formula inputs, refitted",
+      "flesch_kincaid_grade",
+      "flesch_reading_ease",
+      "text length in words"
+    ],
+    "matrix": [
+      [
+        1.0,
+        0.378,
+        0.97,
+        0.834,
+        0.658,
+        0.785,
+        0.254
+      ],
+      [
+        0.378,
+        1.0,
+        0.576,
+        0.464,
+        0.764,
+        0.639,
+        0.207
+      ],
+      [
+        0.97,
+        0.576,
+        1.0,
+        0.872,
+        0.77,
+        0.858,
+        0.274
+      ],
+      [
+        0.834,
+        0.464,
+        0.872,
+        1.0,
+        0.816,
+        0.946,
+        0.247
+      ],
+      [
+        0.658,
+        0.764,
+        0.77,
+        0.816,
+        1.0,
+        0.955,
+        0.235
+      ],
+      [
+        0.785,
+        0.639,
+        0.858,
+        0.946,
+        0.955,
+        1.0,
+        0.256
+      ],
+      [
+        0.254,
+        0.207,
+        0.274,
+        0.247,
+        0.235,
+        0.256,
+        1.0
+      ]
+    ]
+  }
+}
