@@ -15,7 +15,7 @@ def _zip(files: dict[str, bytes]) -> bytes:
 
 
 def test_parse_spanish():
-    text = "word\taverageAoA\tSD\nPerro\t2.58\t1.1\nvenganza\t8.80\t1.9\nvacía\t\t\n"
+    text = "word\taverageAoA\tSD\nPerro\t2.58\t1.1\nvenganza\t8.80\t1.9\nvacía\t\t0.5\n"
     blob = _zip({"SpanishAoA.txt": text.encode("utf-16")})
     assert norms.parse_spanish(blob) == {"perro": 2.58, "venganza": 8.8}
 
