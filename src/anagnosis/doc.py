@@ -32,7 +32,7 @@ _DROP = [
     r"`[^`\n]+`",  # inline code
     r"!\[[^\]]*\]\([^)]*\)",  # inline images
     r"\]\([^)\s]*\)",  # link targets: the "](url)" part
-    r"https?://\S+",  # bare URLs
+    r"https?://[^\s)\]>]*[^\s)\]>.,;:!?]",  # bare URLs, without trailing punctuation
     r"(?m)^[ \t]*>[ \t]?",  # blockquote markers
     r"(?m)^[ \t]*(?:[-*+]|\d+[.)])[ \t]+",  # list markers
     r"\*+",  # emphasis
