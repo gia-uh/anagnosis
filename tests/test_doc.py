@@ -2,11 +2,13 @@ from anagnosis.doc import mask, segment
 
 SOURCE = """---
 title: Prueba
+outline:
+  - pov: Egeo
 ---
 
 # El viaje
 
-Odiseo **volvió** a [Ítaca](https://example.org) después de veinte años. Nadie lo reconoció.
+Odiseo **volvió** a [Ítaca](https://example.org) después de veinte años, según https://example.org/odisea. Nadie lo reconoció.
 
 ![Un barco](barco.png)
 
@@ -37,7 +39,7 @@ def test_mask_keeps_length_and_lines():
 
 def test_mask_removes_markup_and_keeps_words():
     out = mask(SOURCE)
-    for gone in ["title", "**", "https", "](", "barco.png", "{~argos}", "print", "| a |", "# El viaje"]:
+    for gone in ["title", "outline", "pov: Egeo", "example.org", "**", "https", "](", "barco.png", "{~argos}", "print", "| a |", "# El viaje"]:
         assert gone not in out
     for kept in ["volvió", "Ítaca", "Argos", "Penélope"]:
         assert kept in out

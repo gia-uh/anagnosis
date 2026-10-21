@@ -15,7 +15,7 @@ MODELS = {"es": "es_core_news_sm", "en": "en_core_web_sm"}
 
 # Whole matches that are not prose.
 _DROP = [
-    r"\A---\n.*?\n---[ \t]*(?:\n|\Z)",  # front matter
+    r"(?s)\A---\n.*?\n---[ \t]*(?:\n|\Z)",  # front matter
     r"(?ms)^(```|~~~).*?^\1[^\n]*$",  # fenced code
     r"(?s)<!--.*?-->",  # HTML comments
     r"(?s)\$\$.*?\$\$",  # display math
@@ -32,6 +32,7 @@ _DROP = [
     r"`[^`\n]+`",  # inline code
     r"!\[[^\]]*\]\([^)]*\)",  # inline images
     r"\]\([^)\s]*\)",  # link targets: the "](url)" part
+    r"https?://\S+",  # bare URLs
     r"(?m)^[ \t]*>[ \t]?",  # blockquote markers
     r"(?m)^[ \t]*(?:[-*+]|\d+[.)])[ \t]+",  # list markers
     r"\*+",  # emphasis
