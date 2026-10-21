@@ -20,7 +20,9 @@ import numpy as np
 DIMENSIONS = {
     "lexical": ["aoa_mean", "aoa_p90", "aoa_late_share", "rare_word_share",
                 "letters_per_word", "syllables_per_word", "long_word_share"],
-    "syntactic": ["words_per_sentence", "clauses_per_sentence", "mean_dependency_distance", "mean_tree_depth"],
+    # Sentence length and tree depth stay out: they share the length signal with the lexical side and pushed
+    # the two scores to 0.51 (experiments/2026-10-21-orthogonality).
+    "syntactic": ["clauses_per_sentence", "mean_dependency_distance"],
 }
 
 

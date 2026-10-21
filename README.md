@@ -33,7 +33,7 @@ Six dimensions, kept orthogonal, and an age range derived from them. The design 
 | Dimension | Reads as | Built from |
 |---|---|---|
 | Lexical difficulty | age by which a reader knows the words | age-of-acquisition norms (Alonso, Fernández and Díez, 2015, for Spanish; Kuperman, Stadthagen-Gonzalez and Brysbaert, 2012, for English), frequency, concreteness |
-| Syntactic difficulty | age by which a reader parses the sentences | clauses per sentence, dependency distance, tree depth, sentence length; classic formulas as baselines (Crawford, Fernández Huerta, Szigriszt-Pazos with INFLESZ, Flesch-Kincaid) |
+| Syntactic difficulty | age by which a reader parses the sentences | clauses per sentence, dependency distance (sentence length and tree depth are measured but kept out of the score, see `experiments/2026-10-21-orthogonality`); classic formulas as baselines (Crawford, Fernández Huerta, Szigriszt-Pazos with INFLESZ, Flesch-Kincaid) |
 | Specificity | share of the text that needs domain vocabulary | terms and entities extracted with GLiNER |
 | Background knowledge | concepts per 100 words assumed and not explained | GLiNER candidates, decided by Laya or an LLM judge |
 | Structure | how much the reader must track per scene: characters, viewpoints, time order, parallel threads, nested mental states; organization in expository text | GLiNER, rules over the parse, Laya, an LLM judge |
