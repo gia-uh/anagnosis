@@ -1,0 +1,62 @@
+{
+  "baseline": {
+    "correlation": 0.5063735934309872,
+    "correlation_within_level": 0.3372852956412502,
+    "lexical": {
+      "en-school-readers": 0.6612774189328049,
+      "en-school-years": 0.555523299956753
+    },
+    "syntactic": {
+      "en-school-readers": 0.4379394642925631,
+      "en-school-years": 0.41499047805483297
+    }
+  },
+  "lexical without word length": {
+    "correlation": 0.5105900216510959,
+    "correlation_within_level": 0.3402656664229324,
+    "lexical": {
+      "en-school-readers": 0.6569661887159144,
+      "en-school-years": 0.563120473578811
+    },
+    "syntactic": {
+      "en-school-readers": 0.4379394642925631,
+      "en-school-years": 0.41499047805483297
+    }
+  },
+  "syntactic without sentence length": {
+    "correlation": 0.3780187574369231,
+    "correlation_within_level": 0.20511492110111298,
+    "lexical": {
+      "en-school-readers": 0.6612774189328049,
+      "en-school-years": 0.555523299956753
+    },
+    "syntactic": {
+      "en-school-readers": 0.37477792453196107,
+      "en-school-years": 0.35511621593031945
+    }
+  },
+  "both dropped": {
+    "correlation": 0.3958613435579559,
+    "correlation_within_level": 0.22713812258598717,
+    "lexical": {
+      "en-school-readers": 0.6569661887159144,
+      "en-school-years": 0.563120473578811
+    },
+    "syntactic": {
+      "en-school-readers": 0.37477792453196107,
+      "en-school-years": 0.35511621593031945
+    }
+  },
+  "syntactic residualized on lexical": {
+    "correlation": -0.03129386378609129,
+    "correlation_within_level": -0.13018589811055767,
+    "lexical": {
+      "en-school-readers": 0.6612774189328049,
+      "en-school-years": 0.555523299956753
+    },
+    "syntactic": {
+      "en-school-readers": 0.045210670982837174,
+      "en-school-years": 0.17458287276336398
+    }
+  }
+}
