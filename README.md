@@ -16,7 +16,7 @@ This is a research project in its first week. There is no package yet. `experime
 
 ## Dimensions
 
-Four dimensions, kept orthogonal, and an age range derived from them. The design is in `docs/superpowers/specs/2026-10-21-anagnosis-design.html`.
+Six dimensions, kept orthogonal, and an age range derived from them. The design is in `docs/superpowers/specs/2026-10-21-anagnosis-design.html`.
 
 | Dimension | Reads as | Built from |
 |---|---|---|
@@ -24,6 +24,8 @@ Four dimensions, kept orthogonal, and an age range derived from them. The design
 | Syntactic difficulty | age by which a reader parses the sentences | clauses per sentence, dependency distance, tree depth, sentence length; classic formulas as baselines (Crawford, Fernández Huerta, Szigriszt-Pazos with INFLESZ, Flesch-Kincaid) |
 | Specificity | share of the text that needs domain vocabulary | terms and entities extracted with GLiNER |
 | Background knowledge | concepts per 100 words assumed and not explained | GLiNER candidates, decided by Laya or an LLM judge |
+| Structure | how much the reader must track per scene: characters, viewpoints, time order, parallel threads, nested mental states; organization in expository text | GLiNER, rules over the parse, Laya, an LLM judge |
+| Implicit meaning (candidate) | how much meaning is left to infer: theme, irony, figurative language, ambiguity | Laya and an LLM judge |
 
 The age range is the 10th to 90th percentile of per-sentence ages. Only the first two dimensions exist so far, as features in the baseline experiment, and nothing is calibrated yet.
 
